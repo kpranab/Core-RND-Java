@@ -11,7 +11,10 @@ public class LambdaExpression {
 	
 	
 	public static void main(String[] args) {
-		MyLabdaFinctionalInterface msg = ()->{System.out.println("Hello");};
+		MyLabdaFinctionalInterface msg = () -> 
+												{
+													System.out.println("Hello");
+												};
 		msg.hello();
 		
 		MyCalCulator calculator = (x, y) ->  x+y;
@@ -44,12 +47,24 @@ interface MyLabdaFinctionalInterface{
 	void hello();
 }
 
+@FunctionalInterface
 interface MyCalCulator{
 	int add(int x , int y);
 	
 	default int sub(int x ,int y){
 		return x-y;
 	}
+	
+	static int multiplay(int x ,int y){
+		return x*y;
+	}
+	
+	static int divWithRem(int x ,int y){
+		return x%y;
+	}
+	
+	@Override
+	int hashCode();
 }
 
 interface FindFactorial{

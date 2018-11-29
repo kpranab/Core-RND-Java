@@ -4,6 +4,7 @@
 package com.rnd.java8;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collector;
@@ -26,6 +27,8 @@ public class StreamsApiDemo {
 		
 		personList.stream().max(Comparator.comparing(Person::getAge)).ifPresent(oldest -> System.out.println(oldest));
 		
+		//Sorting using lambda expression
+		Collections.sort(personList,(objct1,object2)->objct1.getName().compareTo(object2.getName()));
 		
 		int[] numbers = {23,12,45,2,67};
 
