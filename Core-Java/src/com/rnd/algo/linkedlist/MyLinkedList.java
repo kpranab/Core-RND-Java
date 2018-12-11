@@ -66,6 +66,28 @@ public class MyLinkedList {
 		current.next = newNode;//Assign new node to the last
 	}
 	
+	/**
+	 * Delete the first Node
+	 */
+	public int delete() {
+		Node temp = head;//Assign head to a temp node
+		head = head.next;//Assign next node to head
+		return temp.data;
+	}
+	
+	/**
+	 * Delete the last Node
+	 */
+	public int deleteLast() {
+		Node temp = head;
+		while(temp.next.next != null){//Iterate to the last node
+			temp = temp.next;
+		}
+		int deletedElement = temp.next.data;
+		temp.next = null;//Assign null to the last node
+		return deletedElement;
+	}
+	
 	public void display() {
 		Node tempNode = head;
 		while(tempNode != null) {

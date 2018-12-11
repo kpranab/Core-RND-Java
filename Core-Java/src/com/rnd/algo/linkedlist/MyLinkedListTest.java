@@ -18,5 +18,11 @@ public class MyLinkedListTest {
 		list.addLast(90);
 
 		System.out.println(list);
+		
+		System.out.println("Deleted First Node : "+list.delete());
+		
+		System.out.println("Deleted Last Node : "+list.deleteLast());
+		
+		System.out.println(list);
 	}
 }
