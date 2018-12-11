@@ -88,6 +88,20 @@ public class MyLinkedList {
 		return deletedElement;
 	}
 	
+	/**
+	 * @return middle element of the linked list using 2 pointers
+	 */
+	public int findMiddleNode() {
+		Node firstPointer, slowPointer; //Create two pointers first(2 move) and slow(1 move)
+		firstPointer=slowPointer = head; //Assign Head to both pointers
+		//When 1st pointer reaches to end then the 2nd pointer will be on the middle of the linked list
+		while(firstPointer.next != null && slowPointer != null) {
+			firstPointer = firstPointer.next.next;//Move 2 times
+			slowPointer = slowPointer.next;//Move 1 times
+		}
+		return slowPointer.data;//reaches on middle
+	}
+	
 	public void display() {
 		Node tempNode = head;
 		while(tempNode != null) {
