@@ -95,7 +95,7 @@ public class MyLinkedList {
 		Node firstPointer, slowPointer; //Create two pointers first(2 move) and slow(1 move)
 		firstPointer=slowPointer = head; //Assign Head to both pointers
 		//When 1st pointer reaches to end then the 2nd pointer will be on the middle of the linked list
-		while(firstPointer.next != null && slowPointer != null) {
+		while(firstPointer!= null && firstPointer.next != null && slowPointer != null) {
 			firstPointer = firstPointer.next.next;//Move 2 times
 			slowPointer = slowPointer.next;//Move 1 times
 		}
@@ -117,6 +117,25 @@ public class MyLinkedList {
 			secondPointer = secondPointer.next;
 		}
 		return secondPointer.data;//return data
+	}
+	
+	/**
+	 * @return true/false if there is a loop exists 
+	 */
+	public boolean isLoopExists() {
+		//Create 2 pointers and assign head
+		Node firstPointer = head;
+		Node slowPointer = head;
+		while(slowPointer != null && firstPointer != null && firstPointer.next != null) {
+			//Move first pointer 2times and slow pointer 1 times
+			firstPointer = firstPointer.next.next;
+			slowPointer = slowPointer.next;
+			//when slow pointer match to first pointer then there is a loop
+			if(slowPointer.data == firstPointer.data) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void display() {
