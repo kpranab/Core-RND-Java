@@ -102,6 +102,23 @@ public class MyLinkedList {
 		return slowPointer.data;//reaches on middle
 	}
 	
+	/**
+	 * @return Nth Node from last of the linked list
+	 */
+	public int findNthNodeFromLast(int n) {
+		//Create two pointers and assign head
+		Node fistPointer = head;
+		Node secondPointer = head;
+		for(int i=1;i<n;i++) //move 1st pointer to the nth node
+			fistPointer = fistPointer.next;
+		while(fistPointer.next != null) {//Iterate 1st pointer till end
+			//Move both pointers when 1st will reach at end second will be on the nth node from last
+			fistPointer = fistPointer.next;
+			secondPointer = secondPointer.next;
+		}
+		return secondPointer.data;//return data
+	}
+	
 	public void display() {
 		Node tempNode = head;
 		while(tempNode != null) {

@@ -21,6 +21,8 @@ public class MyLinkedListTest {
 		
 		System.out.println("Middle Element on the linked list : "+list.findMiddleNode());
 		
+		System.out.println("Nth Node from last of the Linked list : "+list.findNthNodeFromLast(4));
+		
 		System.out.println("Deleted First Node : "+list.delete());
 		
 		System.out.println("Deleted Last Node : "+list.deleteLast());
