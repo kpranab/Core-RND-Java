@@ -138,6 +138,19 @@ public class MyLinkedList {
 		return false;
 	}
 	
+	public void reverseList() {
+		Node prvNode = null;
+		Node curNode = head;
+		Node nxtNode = null;
+		while(curNode != null) {
+			nxtNode = curNode.next;
+			curNode.next = prvNode;
+			prvNode = curNode;
+			curNode = nxtNode;
+		}
+		head = prvNode;
+	}
+	
 	public void display() {
 		Node tempNode = head;
 		while(tempNode != null) {

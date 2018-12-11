@@ -1,5 +1,7 @@
 package com.rnd.algo.linkedlist;
 
+import com.rnd.algo.linkedlist.MyLinkedList.Node;
+
 /**
  * @author Pranab Kumar Sahoo
  *
@@ -38,5 +40,8 @@ public class MyLinkedListTest {
 		System.out.println("Deleted Last Node : "+list.deleteLast());
 		
 		System.out.println(list);
+		
+		list.reverseList();
+		System.out.println("Reverse List : "+list);
 	}
 }
