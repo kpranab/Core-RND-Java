@@ -3,7 +3,7 @@ package com.cci.prep.arraysString;
 import java.util.HashSet;
 
 /**
- * @author Muna
+ * @author Pranab Kumar Sahoo
  *
  */
 public class UniqueCharacters {
