@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author Pranab Kumar Sahoo
  *
  */
-public class StringPermutations {
+public class StringPrograms {
 
 	public static void main(String[] args) {
 		System.out.println("Is Permutation string : "+permutation("god", "dog"));
