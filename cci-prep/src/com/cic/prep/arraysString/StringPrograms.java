@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cci.prep.arraysString;
+package com.cic.prep.arraysString;
 
 import java.util.Arrays;
 
