@@ -28,5 +28,14 @@ public class ComparatorAndforEachDemo {
 			}
 		});
 		employeeList.forEach(emp -> System.out.println(emp));
+		System.out.println("\n______________________Sort by name using Java8_____________________________\n");
+		employeeList.sort((Employee e1, Employee e2)-> e1.getName().compareTo(e2.getName()));
+		employeeList.forEach(System.out::println);
+		System.out.println("\n______________________Sort by id using Java8 _______________________________\n");
+		employeeList.sort((Employee e1, Employee e2)-> e1.getId()-e2.getId());
+		employeeList.forEach(System.out::println);
+		System.out.println("\n______________________Sort by name using more feature in Java8 _____________\n");
+		employeeList.sort((e1,e2)->e1.getName().compareTo(e2.getName()));
+		employeeList.forEach(emp -> System.out.println(emp));
 	}
 }

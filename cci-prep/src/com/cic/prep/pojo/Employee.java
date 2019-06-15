@@ -71,12 +71,12 @@ public class Employee {
 
 		List<Employee> employeeList = new ArrayList<Employee>();
 
-		employeeList.add(new Employee(101, "Pranab", 70000, "Software Engineer"));
-		employeeList.add(new Employee(102, "Pramod", 40000, "DevOps Engineer"));
-		employeeList.add(new Employee(103, "Digbijoy", 50000, "Manager"));
-		employeeList.add(new Employee(104, "Mamuni", 2000, "Student"));
-		employeeList.add(new Employee(105, "Sony", 1000, "Heroin"));
-		employeeList.add(new Employee(106, "Chandan", 15000, "Farmer"));
+		employeeList.add(new Employee(104, "Pranab", 70000, "Software Engineer"));
+		employeeList.add(new Employee(105, "Pramod", 40000, "DevOps Engineer"));
+		employeeList.add(new Employee(102, "Digbijoy", 50000, "Manager"));
+		employeeList.add(new Employee(101, "Mamuni", 2000, "Student"));
+		employeeList.add(new Employee(106, "Sony", 1000, "Heroin"));
+		employeeList.add(new Employee(103, "Chandan", 15000, "Farmer"));
 
 		return employeeList;
 
