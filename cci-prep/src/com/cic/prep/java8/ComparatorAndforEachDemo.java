@@ -37,5 +37,7 @@ public class ComparatorAndforEachDemo {
 		System.out.println("\n______________________Sort by name using more feature in Java8 _____________\n");
 		employeeList.sort((e1,e2)->e1.getName().compareTo(e2.getName()));
 		employeeList.forEach(emp -> System.out.println(emp));
+		System.out.println("\n________________________forEach with stream filter __________________________\n");
+		employeeList.stream().filter(emp -> emp.getSalary() > 10000).forEach(System.out::println);
 	}
 }
