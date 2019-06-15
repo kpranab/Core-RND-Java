@@ -13,7 +13,7 @@ import com.cic.prep.pojo.Employee;
  * @author Pranab Kumar Sahoo
  *
  */
-public class LambdaComparator {
+public class ComparatorAndforEachDemo {
 
 	public static void main(String[] args) {
 		List<Employee> employeeList = Employee.getEmployees();
