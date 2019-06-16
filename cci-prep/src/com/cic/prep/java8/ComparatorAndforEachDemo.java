@@ -16,7 +16,7 @@ import com.cic.prep.pojo.Employee;
 public class ComparatorAndforEachDemo {
 
 	public static void main(String[] args) {
-		List<Employee> employeeList = Employee.getEmployees();
+		List<Employee> employeeList = Employee.getEmployeesList();
 		System.out.println("********************* Employee List Before sort *****************************\n");
 		employeeList.forEach(System.out::println);
 		System.out.println("\n______________________Sort by name before Java8_____________________________\n");
