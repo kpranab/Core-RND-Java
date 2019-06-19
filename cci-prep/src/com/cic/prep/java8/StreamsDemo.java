@@ -3,6 +3,7 @@
  */
 package com.cic.prep.java8;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,6 +37,18 @@ public class StreamsDemo {
 		System.out.println("\n**************************** Stream of Employee obj to Employee name list **********\n");
 		List<String> empNameList = employeesList.stream().map(Employee::getName).collect(Collectors.toList());
 		empNameList.forEach(name -> System.out.println(name));
+
+		System.out.println("\n**************************** Stream with map ********************************\n");
+		List<String> alphaList = Arrays.asList("a","b","c","d","e");
+		System.out.println(alphaList);
+		List<String> resultAlphaList = alphaList.stream().map(String::toUpperCase).collect(Collectors.toList());
+		System.out.println(resultAlphaList);
+
+		System.out.println("\n**************************** Stream with map apply to any data type **************\n");
+		List<Integer> numList = Arrays.asList(1,2,3,4,5,6,7,8);
+		System.out.println(numList);
+		List<Integer> resultNumList = numList.stream().map(n -> n*2).collect(Collectors.toList());
+		System.out.println(resultNumList);
 	}
 
 }
