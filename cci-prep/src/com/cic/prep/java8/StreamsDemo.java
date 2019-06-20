@@ -4,10 +4,14 @@
 package com.cic.prep.java8;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
+import static java.util.Map.Entry.*;
 
 import com.cic.prep.pojo.Employee;
 
@@ -57,6 +61,12 @@ public class StreamsDemo {
 		List<String> items = Arrays.asList("apple", "orange", "banana", "pomogranate", "orange", "banana", "orange");
 		Map<String, Long> itemCountMap = items.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 		System.out.println(itemCountMap);
+
+		System.out.println("\n************************** Stream with sort map by Key *************************\n");
+		Map<String,Long> sortedByKeyMap = itemCountMap.entrySet().stream()
+				.sorted(comparingByKey())
+				.collect(toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,LinkedHashMap::new));
+		System.out.println(sortedByKeyMap);
 	}
 
 }
