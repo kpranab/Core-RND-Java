@@ -5,6 +5,8 @@ package com.cic.prep.java8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import com.cic.prep.pojo.Employee;
@@ -49,6 +51,12 @@ public class StreamsDemo {
 		System.out.println(numList);
 		List<Integer> resultNumList = numList.stream().map(n -> n*2).collect(Collectors.toList());
 		System.out.println(resultNumList);
+
+		System.out.println("\n*************************** Stream with Collectors groupBy *********************\n");
+		System.out.println("\n--------------------------- Program to count number of repeation ---------------\n");
+		List<String> items = Arrays.asList("apple", "orange", "banana", "pomogranate", "orange", "banana", "orange");
+		Map<String, Long> itemCountMap = items.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(itemCountMap);
 	}
 
 }
