@@ -67,6 +67,12 @@ public class StreamsDemo {
 				.sorted(comparingByKey())
 				.collect(toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,LinkedHashMap::new));
 		System.out.println(sortedByKeyMap);
+
+		System.out.println("\n************************** Stream with sort map by Value *************************\n");
+		LinkedHashMap<String, Long> sortedByValueMap = itemCountMap.entrySet().stream()
+		.sorted(comparingByValue())
+		.collect(toMap(e -> e.getKey(), e-> e.getValue(), (e1,e2) -> e2, LinkedHashMap::new));
+		System.out.println(sortedByValueMap);
 	}
 
 }
