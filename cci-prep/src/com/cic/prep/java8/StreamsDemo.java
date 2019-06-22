@@ -77,7 +77,8 @@ public class StreamsDemo {
 
 		System.out.println("\n************************* filter null values from a stream ***********************\n");
 		Stream<String> language = Stream.of("java", "python", "scala", null, "R", ".Net", null, "ruby");
-		List<String> result = language.collect(Collectors.toList());
+//		List<String> result = language.collect(Collectors.toList());
+		List<String> result = language.filter(e -> e!= null).collect(Collectors.toList());
 		result.forEach(e -> System.out.println(e));
 	}
 
