@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -78,7 +79,8 @@ public class StreamsDemo {
 		System.out.println("\n************************* filter null values from a stream ***********************\n");
 		Stream<String> language = Stream.of("java", "python", "scala", null, "R", ".Net", null, "ruby");
 //		List<String> result = language.collect(Collectors.toList());
-		List<String> result = language.filter(e -> e!= null).collect(Collectors.toList());
+//		List<String> result = language.filter(e -> e!= null).collect(Collectors.toList());
+		List<String> result = language.filter(Objects:: nonNull).collect(Collectors.toList());
 		result.forEach(e -> System.out.println(e));
 	}
 
