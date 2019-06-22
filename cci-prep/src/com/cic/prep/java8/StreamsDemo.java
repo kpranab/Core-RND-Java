@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.*;
 import static java.util.Map.Entry.*;
@@ -73,6 +74,11 @@ public class StreamsDemo {
 		.sorted(comparingByValue())
 		.collect(toMap(e -> e.getKey(), e-> e.getValue(), (e1,e2) -> e2, LinkedHashMap::new));
 		System.out.println(sortedByValueMap);
+
+		System.out.println("\n************************* filter null values from a stream ***********************\n");
+		Stream<String> language = Stream.of("java", "python", "scala", null, "R", ".Net", null, "ruby");
+		List<String> result = language.collect(Collectors.toList());
+		result.forEach(e -> System.out.println(e));
 	}
 
 }
