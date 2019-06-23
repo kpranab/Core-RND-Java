@@ -82,6 +82,14 @@ public class StreamsDemo {
 //		List<String> result = language.filter(e -> e!= null).collect(Collectors.toList());
 		List<String> result = language.filter(Objects:: nonNull).collect(Collectors.toList());
 		result.forEach(e -> System.out.println(e));
+
+		System.out.println("\n************************ Convert array to Stream *********************************\n");
+		String[] array = {"a", "b", "c", "d", "e", "f"};
+		Stream<String> stream = Arrays.stream(array);
+		stream.forEach(System.out::println);
+		System.out.println("\n************************ Convert array to Stream using Stream.of() *****************\n");
+		Stream<String> stream2 = Stream.of(array);
+		stream2.forEach(e -> System.out.println(e));
 	}
 
 }
