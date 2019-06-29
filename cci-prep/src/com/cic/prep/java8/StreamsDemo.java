@@ -96,6 +96,11 @@ public class StreamsDemo {
 		int[] intArray = {1,2,3,4,5,6,7,8};
 		IntStream intStream = Arrays.stream(intArray);
 		intStream.forEach(e -> System.out.println(e));
+
+		System.out.println("\n************************* Primitive array to Stream using Stream.of() **************\n");
+		Stream<int[]> stream3 = Stream.of(intArray);//Can't print Stream<int[]> directly , convert / flat it to IntStream
+		IntStream intStream1 = stream3.flatMapToInt(e -> Arrays.stream(e));
+		intStream1.forEach(System.out::println);
 	}
 
 }
