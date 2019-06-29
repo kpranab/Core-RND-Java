@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.*;
@@ -90,6 +91,11 @@ public class StreamsDemo {
 		System.out.println("\n************************ Convert array to Stream using Stream.of() *****************\n");
 		Stream<String> stream2 = Stream.of(array);
 		stream2.forEach(e -> System.out.println(e));
+
+		System.out.println("\n************************* Primitive array to Stream ********************************\n");
+		int[] intArray = {1,2,3,4,5,6,7,8};
+		IntStream intStream = Arrays.stream(intArray);
+		intStream.forEach(e -> System.out.println(e));
 	}
 
 }
