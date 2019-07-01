@@ -111,6 +111,10 @@ public class StreamsDemo {
 		streamSupplier.get().forEach(e -> System.out.println(e)); //get new Stream
 		long count = streamSupplier.get().filter(e -> "c".equals(e)).count();
 		System.out.println("\n Count : "+count);
+
+		System.out.println("\n********************* Convert list to map **************************************\n");
+		Map<Integer, Employee> collectEmpMap = employeesList.stream().collect(Collectors.toMap(Employee::getId, emp -> emp));
+		System.out.println(collectEmpMap);
 	}
 
 }
