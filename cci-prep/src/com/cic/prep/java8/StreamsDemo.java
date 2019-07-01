@@ -101,6 +101,8 @@ public class StreamsDemo {
 		Stream<int[]> stream3 = Stream.of(intArray);//Can't print Stream<int[]> directly , convert / flat it to IntStream
 		IntStream intStream1 = stream3.flatMapToInt(e -> Arrays.stream(e));
 		intStream1.forEach(System.out::println);
+
+//		stream.forEach(e ->System.out.println(e)); //Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
 	}
 
 }
