@@ -114,7 +114,8 @@ public class StreamsDemo {
 
 		System.out.println("\n********************* Convert list to map **************************************\n");
 		Map<Integer, Employee> collectEmpMap = employeesList.stream().collect(Collectors.toMap(Employee::getId, emp -> emp));
-		System.out.println(collectEmpMap);
+		//System.out.println(collectEmpMap);
+		collectEmpMap.forEach((k, v) -> System.out.println((k + ":" + v)));
 	}
 
 }
