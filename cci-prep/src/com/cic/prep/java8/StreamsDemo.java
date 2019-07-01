@@ -116,6 +116,11 @@ public class StreamsDemo {
 		Map<Integer, Employee> collectEmpMap = employeesList.stream().collect(Collectors.toMap(Employee::getId, emp -> emp));
 		//System.out.println(collectEmpMap);
 		collectEmpMap.forEach((k, v) -> System.out.println((k + ":" + v)));
+
+		System.out.println("\n******************* Map with filter **************************************\n");
+		Map<Integer, Employee> employeesMap = Employee.getEmployeesMap();
+		Map<Integer, Employee> collectFilterEmpMap = employeesMap.entrySet().stream().filter(emp -> emp.getKey() > 104).collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+		System.out.println(collectFilterEmpMap);
 	}
 
 }
