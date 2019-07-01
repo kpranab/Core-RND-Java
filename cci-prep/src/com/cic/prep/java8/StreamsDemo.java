@@ -3,18 +3,20 @@
  */
 package com.cic.prep.java8;
 
+import static java.util.Map.Entry.comparingByKey;
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.toMap;
+
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.*;
-import static java.util.Map.Entry.*;
 
 import com.cic.prep.pojo.Employee;
 
@@ -103,6 +105,12 @@ public class StreamsDemo {
 		intStream1.forEach(System.out::println);
 
 //		stream.forEach(e ->System.out.println(e)); //Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+
+		System.out.println("\n*********************** Re-use stream using Supplier ******************************\n");
+		Supplier<Stream<String>> streamSupplier = () -> Stream.of(array);
+		streamSupplier.get().forEach(e -> System.out.println(e)); //get new Stream
+		long count = streamSupplier.get().filter(e -> "c".equals(e)).count();
+		System.out.println("\n Count : "+count);
 	}
 
 }
