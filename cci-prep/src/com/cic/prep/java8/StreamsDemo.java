@@ -7,7 +7,9 @@ import static java.util.Map.Entry.comparingByKey;
 import static java.util.Map.Entry.comparingByValue;
 import static java.util.stream.Collectors.toMap;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -126,6 +128,27 @@ public class StreamsDemo {
 		String[][] data = {{"a","b"},{"c","d"},{"e","f"}};
 		Stream<String[]> tempStream = Arrays.stream(data);
 		tempStream.flatMap(e -> Arrays.stream(e)).forEach(System.out::println);
+
+		Map<String, String> map = new HashMap<>();
+
+		// Convert all Map keys to a List
+		List<String> result1 = new ArrayList(map.keySet());
+
+		// Convert all Map values to a List
+		List<String> result2 = new ArrayList(map.values());
+
+		// Java 8, Convert all Map keys to a List
+		List<String> result3 = map.keySet().stream()
+			.collect(Collectors.toList());
+
+		// Java 8, Convert all Map values  to a List
+		List<String> result4 = map.values().stream()
+			.collect(Collectors.toList());
+
+		// Java 8, seem a bit long, but you can enjoy the Stream features like filter and etc.
+		List<String> result5 = map.values().stream()
+			.filter(x -> !"apple".equalsIgnoreCase(x))
+			.collect(Collectors.toList());
 	}
 
 }
