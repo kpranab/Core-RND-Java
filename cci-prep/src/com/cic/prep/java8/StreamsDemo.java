@@ -124,7 +124,7 @@ public class StreamsDemo {
 		Map<Integer, Employee> collectFilterEmpMap = employeesMap.entrySet().stream().filter(emp -> emp.getKey() > 104).collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
 		System.out.println(collectFilterEmpMap);
 
-		System.out.println("\n******************* Flastmap *******************************************\n");
+		System.out.println("\n******************* flatmap *******************************************\n");
 		String[][] data = {{"a","b"},{"c","d"},{"e","f"}};
 		Stream<String[]> tempStream = Arrays.stream(data);
 		tempStream.flatMap(e -> Arrays.stream(e)).forEach(System.out::println);
