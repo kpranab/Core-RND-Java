@@ -20,17 +20,21 @@ public class RanjanTest {
 			List<String> asList = Arrays.asList(string.split("\\."));
 			System.out.println(asList);
 			for (int i = 0; i < asList.size(); i++) {
-				if (resultMap.containsKey(asList.get(0))) {
-					HashMap<String, Set<String>> hashMap = resultMap.get(asList.get(0));
-					resultMap.put(asList.get(0), createMap(hashMap, asList));
-				} else {
-					resultMap.put(asList.get(0), createMap(asList));
-				}
+				getResultMap(resultMap, asList);
 			}
 		}
 
 		System.out.println();
 		resultMap.forEach((k, v) -> System.out.println(k + " " + v));
+	}
+
+	private static void getResultMap(Map<String, HashMap<String, Set<String>>> resultMap, List<String> asList) {
+		if (resultMap.containsKey(asList.get(0))) {
+			HashMap<String, Set<String>> hashMap = resultMap.get(asList.get(0));
+			resultMap.put(asList.get(0), createMap(hashMap, asList));
+		} else {
+			resultMap.put(asList.get(0), createMap(asList));
+		}
 	}
 
 	private static HashMap<String, Set<String>> createMap(HashMap<String, Set<String>> inputMap, List<String> asList) {
