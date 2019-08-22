@@ -28,5 +28,10 @@ public class CompletableFutureDemo {
 			return "supplyAsync";
 		});
 		System.out.println("Value -> "+ cf3.get());
+
+		CompletableFuture<String> cf4 = CompletableFuture.supplyAsync(() ->{
+			return "Hello";
+		}).thenApply(v -> v.toUpperCase());
+		System.out.println("Value -> "+cf4.get());
 	}
 }
