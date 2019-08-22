@@ -13,5 +13,10 @@ public class CompletableFutureDemo {
 		CompletableFuture<String> cf = new CompletableFuture<>();
 		cf.complete("Hello CompletableFuture");
 		System.out.println(cf.get());
+
+		CompletableFuture<String> cf1 = CompletableFuture.completedFuture("Hello");
+		if(cf1.isDone()){
+			System.out.println("Value -> "+cf1.get());
+		}
 	}
 }
