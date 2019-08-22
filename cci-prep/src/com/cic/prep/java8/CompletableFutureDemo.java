@@ -18,5 +18,15 @@ public class CompletableFutureDemo {
 		if(cf1.isDone()){
 			System.out.println("Value -> "+cf1.get());
 		}
+
+		CompletableFuture<Void> cf2 = CompletableFuture.runAsync(() ->{
+			System.out.println("Hello runAsync");
+		});
+		System.out.println("Value -> "+cf2.get());
+
+		CompletableFuture cf3 = CompletableFuture.supplyAsync(() ->{
+			return "supplyAsync";
+		});
+		System.out.println("Value -> "+ cf3.get());
 	}
 }
