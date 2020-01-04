@@ -4,6 +4,17 @@ package com.rnd.numbers;
  * @author pranab
  *
  */
+
+/**
+
+An Armstrong number is a number that is equal to the sum of the digits in a number
+raised to the power of number of digits in the number.
+
+As Example - If we take 371, it is an Armstrong number as the number of digits here is 3, so
+
+371 = 3 pow 3 + 7 pow 3 + 1 pow 3 = 27 + 343 + 1 = 371
+
+ */
 public class ArmstrongNumber {
 	
 	public static void main(String[] args) {
