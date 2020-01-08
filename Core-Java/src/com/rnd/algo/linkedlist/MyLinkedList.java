@@ -5,16 +5,6 @@ package com.rnd.algo.linkedlist;
  *
  */
 public class MyLinkedList {
-
-	//Create class Node with next and data, And initialize data with constructor and point next to learn
-	class Node{
-		int data;
-		Node next;
-		Node(int element){
-			this.data = element;
-			next = null;
-		}
-	}
 	
 	//Declare a head
 	private Node head;
@@ -24,7 +14,7 @@ public class MyLinkedList {
 	 * if head is null then list is empty
 	 */
 	public boolean isEmpty(){
-		return (head == null);
+		return head == null;
 	}
 	
 	
@@ -176,4 +166,12 @@ public class MyLinkedList {
 	}
 }
 
-
+//Create class Node with next and data, And initialize data with constructor and point next to learn
+class Node{
+	int data;
+	Node next;
+	Node(int element){
+		this.data = element;
+		next = null;
+	}
+}
