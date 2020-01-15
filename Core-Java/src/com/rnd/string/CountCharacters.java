@@ -1,6 +1,11 @@
 package com.rnd.string;
 
+import static java.util.Map.Entry.comparingByKey;
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.toMap;
+
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -10,7 +15,7 @@ import java.util.Map;
 public class CountCharacters {
 
 	public static void main(String[] args) {
-		CountCharacters.countChar("I am an	Indian");
+		//CountCharacters.countChar("I am an	Indian");
 		CountCharacters.countCharUsingMap("I am an	Indian");
 	}
 
@@ -48,6 +53,11 @@ public class CountCharacters {
 				countMap.put(ch, 1);
 		}
 		countMap.forEach((k,v) -> System.out.println(k+ " -> "+v));
+		System.out.println("Sort by Key.....");
+		//Sort by Key and need to do static import
+		countMap.entrySet().stream().sorted(comparingByValue()).
+		collect(toMap(Map.Entry::getKey, Map.Entry::getValue,(oldValue,newValue)->oldValue,LinkedHashMap::new))
+		.forEach((k,v)-> System.out.println(k+" "+v));
 	}
 
 }
