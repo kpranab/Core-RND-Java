@@ -33,6 +33,21 @@ public class BinaryTree {
 		System.out.println("\n\nPostorder traversal -----------------\n");
 		binaryTree.postOrder(binaryTree.root);
 
+		System.out.println("\n\n Find Min -------------------: " + binaryTree.findMin(binaryTree.root).value);
+		System.out.println("\n Find Max -------------------: " + binaryTree.findMax(binaryTree.root).value);
+
+	}
+
+	public Node findMax(Node node) {
+		if (node.right != null)
+			return findMax(node.right);
+		return node;
+	}
+
+	public Node findMin(Node node) {
+		if (node.left != null)
+			return findMin(node.left);
+		return node;
 	}
 
 	// left root right
@@ -75,11 +90,11 @@ public class BinaryTree {
 		return current;
 	}
 
-	private void insertWithRecursion(int value) {
+	public void insertWithRecursion(int value) {
 		root = insertWithRecursion(root, value);
 	}
 
-	private Node insertWithRecursion(Node node, int value) {
+	public Node insertWithRecursion(Node node, int value) {
 		if (node == null)
 			return new Node(value);
 		// Move left if value is less than current node value
@@ -93,7 +108,7 @@ public class BinaryTree {
 		return node;
 	}
 
-	private void insert(int value) {
+	public void insert(int value) {
 		Node node = new Node(value);
 		if (root == null) {
 			root = node;
